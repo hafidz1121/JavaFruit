@@ -39,8 +39,16 @@ export default function Hero() {
               style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
             />
           </div>
-          <div className="swoosh-badge" style={{ whiteSpace: 'pre-line' }}>
-            {t.hero.badge}
+          <div className="swoosh-badge top-brand-seal">
+            <span className="seal-star">★ ★ ★</span>
+            <span className="seal-text">
+              {t.hero.badge.split('\n').map((line, i) => (
+                <span key={i} className="seal-line">
+                  {line}
+                  {i < t.hero.badge.split('\n').length - 1 && <br />}
+                </span>
+              ))}
+            </span>
           </div>
         </div>
       </div>

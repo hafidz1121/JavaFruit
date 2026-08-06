@@ -58,7 +58,7 @@ export const metadata = {
     images: ['/assets/hero-bananas.jpg'],
   },
   icons: {
-    icon: '/assets/logo-cv.jpeg',
+    icon: '/assets/logo-cv.png',
   },
   robots: {
     index: true,
@@ -72,7 +72,7 @@ const jsonLd = {
   name: 'CV Intiplant Agro Lestari',
   alternateName: 'Java Fruit',
   url: 'https://www.javafruitindonesia.com/',
-  logo: 'https://www.javafruitindonesia.com/assets/logo-cv.jpeg',
+  logo: 'https://www.javafruitindonesia.com/assets/logo-cv.png',
   description:
     'Producer and exporter of premium Cavendish and Mas Kirana bananas from Lumajang Regency, East Java, Indonesia.',
   address: {

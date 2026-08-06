@@ -1,7 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import logoCV from '../public/assets/logo-cv.jpeg';
+import logoCV from '../public/assets/logo-cv.png';
+import logoJavaFruit from '../public/assets/logo-javafruit.png';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageToggle from './LanguageToggle';
 
@@ -38,15 +39,26 @@ export default function Header() {
     <header>
       <div className="nav">
         <a href="#top" className="brand" onClick={() => setMenuOpen(false)}>
-          <Image
-            src={logoCV}
-            alt="Logo CV Intiplant Agro Lestari"
-            width={40}
-            height={40}
-            priority
-            sizes="40px"
-            style={{ width: '40px', height: '40px', objectFit: 'contain', borderRadius: '8px', flexShrink: 0 }}
-          />
+          <div className="brand-logos" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Image
+              src={logoCV}
+              alt="Logo CV Intiplant Agro Lestari"
+              width={34}
+              height={34}
+              priority
+              sizes="34px"
+              style={{ width: '34px', height: '34px', objectFit: 'contain', borderRadius: '6px', flexShrink: 0 }}
+            />
+            <Image
+              src={logoJavaFruit}
+              alt="Logo Java Fruit"
+              width={42}
+              height={42}
+              priority
+              sizes="42px"
+              style={{ width: '42px', height: '42px', objectFit: 'contain', flexShrink: 0 }}
+            />
+          </div>
           <div className="brand-text">
             <strong>Java Fruit</strong>
             <span>CV Intiplant Agro Lestari</span>
