@@ -1,3 +1,5 @@
+'use client';
+import { LanguageProvider } from '../context/LanguageContext';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -11,7 +13,7 @@ import Footer from '../components/Footer';
 
 export default function HomePage() {
   return (
-    <>
+    <LanguageProvider>
       <Header />
       <main id="top">
         <Hero />
@@ -24,6 +26,6 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }

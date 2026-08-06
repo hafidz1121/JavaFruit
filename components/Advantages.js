@@ -1,41 +1,51 @@
-const items = [
-  {
-    title: 'Premium Quality',
-    text: 'We implement the best agricultural practices and modern technology to maintain product consistency and quality across every harvest.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22V12M12 12C12 6 17 3 21 3c0 4-2 9-9 9Zm0 0C12 6 7 3 3 3c0 4 2 9 9 9Z" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Health & Hygiene',
-    text: 'Every banana is harvested, processed, and packaged hygienically to maintain cleanliness and health standards — free from harmful pesticides.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z" />
-        <path d="M9 12l2 2 4-4" />
-      </svg>
-    ),
-  },
-  {
-    title: 'Taste & Texture',
-    text: 'Naturally sweet taste and soft texture — ideal for direct consumption or as an ingredient in food and beverage recipes.',
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M4 13a8 8 0 0 0 16 0M4 13a8 8 0 0 1 16 0M4 13V6a8 8 0 0 1 16 0v7" />
-      </svg>
-    ),
-  },
-];
+'use client';
+import Image from 'next/image';
+import mealTrayImg from '../public/assets/mas-kirana-meal-tray.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Advantages() {
+  const { t } = useLanguage();
+
+  const items = [
+    {
+      title: t.advantages.item1Title,
+      text: t.advantages.item1Text,
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="8" r="6" />
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+        </svg>
+      ),
+    },
+    {
+      title: t.advantages.item2Title,
+      text: t.advantages.item2Text,
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+      ),
+    },
+    {
+      title: t.advantages.item3Title,
+      text: t.advantages.item3Text,
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22v-9" />
+          <path d="M12 13C12 7.5 17 4 21 4c0 5-3 9-9 9Z" />
+          <path d="M12 13C12 8.5 8 6 3 7c0 4.5 3.5 7.5 9 6Z" />
+        </svg>
+      ),
+    },
+  ];
+
   return (
     <section className="advantages" id="advantages">
       <div className="wrap">
         <div className="section-head">
-          <p className="eyebrow">Advantages</p>
-          <h2>What sets Java Fruit bananas apart</h2>
+          <p className="eyebrow">{t.advantages.eyebrow}</p>
+          <h2>{t.advantages.h2}</h2>
         </div>
         <div className="cards3">
           {items.map((item) => (
@@ -45,6 +55,26 @@ export default function Advantages() {
               <p>{item.text}</p>
             </div>
           ))}
+        </div>
+        <div className="advantages-meal-card">
+          <div className="advantages-meal-img">
+            <Image
+              src={mealTrayImg}
+              alt={t.advantages.mealAlt}
+              width={1080}
+              height={1440}
+              loading="lazy"
+              sizes="(max-width: 960px) 100vw, 50vw"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          </div>
+          <div className="advantages-meal-info">
+            <p className="eyebrow" style={{ marginBottom: '8px' }}>{t.advantages.mealEyebrow}</p>
+            <h3 style={{ fontSize: '1.4rem', color: 'var(--green-deep)', marginBottom: '12px' }}>{t.advantages.mealTitle}</h3>
+            <p style={{ color: 'var(--ink-soft)', fontSize: '0.96rem', margin: 0 }}>
+              {t.advantages.mealText}
+            </p>
+          </div>
         </div>
       </div>
     </section>

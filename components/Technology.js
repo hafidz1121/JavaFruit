@@ -1,24 +1,24 @@
+'use client';
 import Image from 'next/image';
-import warehouseImg from '../public/assets/warehouse.jpg';
-
-const steps = [
-  { n: '01', title: 'No Carbide Used', text: 'Our bananas are never ripened with carbide chemicals.' },
-  { n: '02', title: 'Cold Storage', text: 'Controlled temperature, humidity, and air circulation.' },
-  { n: '03', title: 'Ethylene Gas Based', text: 'A natural ripening hormone produced by fruit itself.' },
-  { n: '04', title: 'Modern Technology', text: 'Controlled post-harvest systems preserve fruit quality.' },
-];
+import coldroomPackingImg from '../public/assets/coldroom-packing.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Technology() {
+  const { t } = useLanguage();
+
+  const steps = [
+    { n: '01', title: t.technology.step1Title, text: t.technology.step1Text },
+    { n: '02', title: t.technology.step2Title, text: t.technology.step2Text },
+    { n: '03', title: t.technology.step3Title, text: t.technology.step3Text },
+    { n: '04', title: t.technology.step4Title, text: t.technology.step4Text },
+  ];
+
   return (
     <section className="tech" id="technology">
       <div className="wrap">
-        <p className="eyebrow">Post-Harvest Technology</p>
-        <h2>Banana ripening with technology — not carbide.</h2>
-        <p className="tech-sub">
-          We use modern ripening technology with ethylene gas in controlled cold storage,
-          keeping every bunch naturally ripened, evenly coloured, and sweeter — safe for
-          consumption from farm to table.
-        </p>
+        <p className="eyebrow">{t.technology.eyebrow}</p>
+        <h2>{t.technology.h2}</h2>
+        <p className="tech-sub">{t.technology.sub}</p>
 
         <div className="steps">
           {steps.map((s) => (
@@ -32,22 +32,25 @@ export default function Technology() {
 
         <div className="tech-panel">
           <div className="copy">
-            <h3>We Use Ethylene Gas</h3>
+            <h3>{t.technology.panelTitle}</h3>
             <p style={{ color: 'rgba(255,255,255,0.75)', margin: 0 }}>
-              Ethylene is a natural hormone produced by fruits during the ripening
-              process. With this technology, our bananas:
+              {t.technology.panelSub}
             </p>
             <ul>
-              <li>Ripen more evenly</li>
-              <li>Develop a natural yellow colour</li>
-              <li>Taste noticeably sweeter</li>
+              <li>{t.technology.li1}</li>
+              <li>{t.technology.li2}</li>
+              <li>{t.technology.li3}</li>
             </ul>
           </div>
           <div className="photo">
             <Image
-              src={warehouseImg}
-              alt="Java Fruit banana boxes prepared in cold storage warehouse for distribution"
-              style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '320px' }}
+              src={coldroomPackingImg}
+              alt={t.technology.altText}
+              width={1280}
+              height={960}
+              loading="lazy"
+              sizes="(max-width: 960px) 100vw, 50vw"
+              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
             />
           </div>
         </div>

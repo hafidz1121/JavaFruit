@@ -3,14 +3,14 @@ import './globals.css';
 
 const fraunces = Fraunces({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '900'],
+  weight: ['600', '700'],
   variable: '--font-fraunces',
   display: 'swap',
 });
 
 const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-inter',
   display: 'swap',
 });
@@ -22,7 +22,6 @@ const plexMono = IBM_Plex_Mono({
   display: 'swap',
 });
 
-// ---- SEO: Metadata API (this replaces manual <meta> tags) ----
 export const metadata = {
   metadataBase: new URL('https://www.javafruitindonesia.com'),
   title: {
@@ -59,7 +58,7 @@ export const metadata = {
     images: ['/assets/hero-bananas.jpg'],
   },
   icons: {
-    icon: '/assets/logo.jpg',
+    icon: '/assets/logo-cv.jpeg',
   },
   robots: {
     index: true,
@@ -73,7 +72,7 @@ const jsonLd = {
   name: 'CV Intiplant Agro Lestari',
   alternateName: 'Java Fruit',
   url: 'https://www.javafruitindonesia.com/',
-  logo: 'https://www.javafruitindonesia.com/assets/logo.jpg',
+  logo: 'https://www.javafruitindonesia.com/assets/logo-cv.jpeg',
   description:
     'Producer and exporter of premium Cavendish and Mas Kirana bananas from Lumajang Regency, East Java, Indonesia.',
   address: {

@@ -1,7 +1,11 @@
+'use client';
 import Image from 'next/image';
-import aboutImg from '../public/assets/about-governor.jpg';
+import aboutImg from '../public/assets/farmer-group-governor.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <>
       <div className="curve-divider" aria-hidden="true">
@@ -14,29 +18,24 @@ export default function About() {
           <div className="about-media">
             <Image
               src={aboutImg}
-              alt="CV Intiplant Agro Lestari farmer partners with the Governor of East Java and Acting Regent of Lumajang"
-              style={{ width: '100%', height: '520px', objectFit: 'cover' }}
+              alt={t.about.altText}
+              width={1080}
+              height={720}
+              sizes="(max-width: 960px) 100vw, 45vw"
+              style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '12px' }}
             />
-            <div className="tag"><b>50+</b>Millennial farmer partners across Lumajang Regency</div>
+            <div className="tag">
+              <b>{t.about.tagNum}</b>
+              {t.about.tagText}
+            </div>
           </div>
           <div>
-            <p className="eyebrow">About Java Fruit</p>
-            <h2>A flagship brand built on farmer partnership and modern standards.</h2>
-            <p>
-              Java Fruit is a brand engaged in the empowerment of Cavendish and Mas
-              Kirana banana farming. We provide high-quality fresh bananas cultivated to
-              modern farming standards, harvested from selected plantations, and
-              hygienically packaged to maintain freshness until they reach consumers.
-            </p>
-            <p>
-              Java Fruit bananas are cultivated by millennial farmers in Lumajang
-              Regency, East Java Province, Indonesia, who collaborate as partners of CV
-              Intiplant Agro Lestari — combining local knowledge with export-grade
-              quality control.
-            </p>
-            <blockquote>
-              &ldquo;Producing locally grown Cavendish and Mas Kirana bananas with global
-              quality standards.&rdquo;
+            <p className="eyebrow">{t.about.eyebrow}</p>
+            <h2>{t.about.h2}</h2>
+            <p>{t.about.p1}</p>
+            <p>{t.about.p2}</p>
+            <blockquote style={{ whiteSpace: 'pre-line' }}>
+              {t.about.quote}
             </blockquote>
           </div>
         </div>

@@ -1,18 +1,23 @@
-const badges = [
-  ['Naturally', 'Ripened', 'Bananas'],
-  ['Sweeter', 'Taste'],
-  ['Quality', 'Maintained'],
-  ['Safe for', 'Consumption'],
-];
+'use client';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Benefits() {
+  const { t } = useLanguage();
+
+  const badges = [
+    t.benefits.badge1,
+    t.benefits.badge2,
+    t.benefits.badge3,
+    t.benefits.badge4,
+  ];
+
   return (
     <section className="benefits">
       <div className="wrap">
         <div className="benefits-head">
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>Benefits of Technology</p>
-          <h2>Modern, controlled post-harvest handling to protect fruit quality</h2>
-          <p>&ldquo;We use modern and controlled post-harvest technology to maintain fruit quality.&rdquo;</p>
+          <p className="eyebrow" style={{ justifyContent: 'center' }}>{t.benefits.eyebrow}</p>
+          <h2>{t.benefits.h2}</h2>
+          <p>{t.benefits.sub}</p>
         </div>
         <div className="badge-ring">
           {badges.map((lines, i) => (

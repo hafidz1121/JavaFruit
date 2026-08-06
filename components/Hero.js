@@ -1,29 +1,30 @@
+'use client';
 import Image from 'next/image';
 import heroImg from '../public/assets/hero-bananas.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section className="hero">
       <div className="wrap hero-grid">
         <div>
-          <p className="eyebrow">Lumajang, East Java · Indonesia</p>
+          <p className="eyebrow">{t.hero.eyebrow}</p>
           <h1>
-            Premium <em>Cavendish</em> &amp; Mas Kirana bananas, grown by the next
-            generation of Indonesian farmers.
+            {t.hero.h1_1}<em>{t.hero.h1_cavendish}</em>{t.hero.h1_2}
           </h1>
           <p className="hero-sub">
-            Java Fruit is the flagship brand of CV Intiplant Agro Lestari — cultivated to
-            global quality standards, ripened without carbide, and hygienically packaged
-            from farm to table.
+            {t.hero.sub}
           </p>
           <div className="hero-ctas">
-            <a href="#contact" className="btn gold">Request a Quote</a>
-            <a href="#about" className="btn outline">Learn Our Story ↓</a>
+            <a href="#contact" className="btn gold">{t.hero.requestQuote}</a>
+            <a href="#about" className="btn outline">{t.hero.learnStory}</a>
           </div>
           <div className="hero-stats">
-            <div className="hstat"><b>50 ha</b><span>Plantation Area</span></div>
-            <div className="hstat"><b>7 t/wk</b><span>Production Capacity</span></div>
-            <div className="hstat"><b>0%</b><span>Carbide Used</span></div>
+            <div className="hstat"><b>{t.hero.stat1Num}</b><span>{t.hero.stat1Label}</span></div>
+            <div className="hstat"><b>{t.hero.stat2Num}</b><span>{t.hero.stat2Label}</span></div>
+            <div className="hstat"><b>{t.hero.stat3Num}</b><span>{t.hero.stat3Label}</span></div>
           </div>
         </div>
         <div className="hero-media">
@@ -31,11 +32,16 @@ export default function Hero() {
             <Image
               src={heroImg}
               alt="Fresh premium Cavendish bananas from Java Fruit packed in export boxes"
+              width={800}
+              height={523}
               priority
-              style={{ width: '100%', height: '460px', objectFit: 'cover' }}
+              sizes="(max-width: 960px) 100vw, 50vw"
+              style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
             />
           </div>
-          <div className="swoosh-badge">Millennial<br />Farmer<br />Grown</div>
+          <div className="swoosh-badge" style={{ whiteSpace: 'pre-line' }}>
+            {t.hero.badge}
+          </div>
         </div>
       </div>
     </section>

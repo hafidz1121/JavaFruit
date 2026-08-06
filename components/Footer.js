@@ -1,9 +1,15 @@
+'use client';
+import { useLanguage } from '../context/LanguageContext';
+
 export default function Footer() {
+  const { t } = useLanguage();
+  const year = new Date().getFullYear();
+
   return (
     <footer>
       <div className="wrap foot-row">
-        <span>© {new Date().getFullYear()} CV Intiplant Agro Lestari — Java Fruit. All rights reserved.</span>
-        <span>East Java, Indonesia</span>
+        <span>{t.footer.rights.replace('{year}', year)}</span>
+        <span>{t.footer.location}</span>
       </div>
     </footer>
   );

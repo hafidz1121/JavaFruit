@@ -1,14 +1,51 @@
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+
+function LazyMap({ mapTitle }) {
+  const ref = useRef(null);
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoad(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div className="map-frame" ref={ref}>
+      {load ? (
+        <iframe
+          title={mapTitle}
+          loading="lazy"
+          src="https://www.google.com/maps?q=Rojopolo,+Jatiroto,+Lumajang+Regency,+East+Java&output=embed"
+        />
+      ) : (
+        <div style={{ width: '100%', height: '380px', background: '#e8ede4' }} />
+      )}
+    </div>
+  );
+}
+
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section className="contact" id="contact">
       <div className="wrap contact-grid">
         <div>
-          <p className="eyebrow" style={{ color: 'var(--gold-soft)' }}>Get in Touch</p>
-          <h2>Let&apos;s talk about your banana supply.</h2>
-          <p className="lede">
-            Whether you&apos;re a distributor, retailer, or export partner — reach out and
-            our team will respond with availability, pricing, and shipping options.
-          </p>
+          <p className="eyebrow" style={{ color: 'var(--gold-soft)' }}>{t.contact.eyebrow}</p>
+          <h2>{t.contact.h2}</h2>
+          <p className="lede">{t.contact.lede}</p>
           <div className="contact-list">
             <a href="tel:+628570603286" className="row">
               <span className="ic">
@@ -34,8 +71,7 @@ export default function Contact() {
                   <circle cx="12" cy="10" r="2.5" />
                 </svg>
               </span>
-              Krajan Kidul Hamlet RT/RW 001/003, Rojopolo Village, Jatiroto District,
-              Lumajang Regency, 67355, East Java, Indonesia
+              {t.contact.address}
             </div>
           </div>
           <div className="social-row">
@@ -47,13 +83,7 @@ export default function Contact() {
             </a>
           </div>
         </div>
-        <div className="map-frame">
-          <iframe
-            title="Java Fruit office location map, Lumajang, East Java"
-            loading="lazy"
-            src="https://www.google.com/maps?q=Rojopolo,+Jatiroto,+Lumajang+Regency,+East+Java&output=embed"
-          />
-        </div>
+        <LazyMap mapTitle={t.contact.mapTitle} />
       </div>
     </section>
   );

@@ -1,40 +1,38 @@
+'use client';
 import Image from 'next/image';
-import crateBananas from '../public/assets/crate-bananas.jpg';
-import packingWoman from '../public/assets/packing-woman.jpg';
-import greenBunch from '../public/assets/green-bunch-closeup.jpg';
+import bananaPlantation from '../public/assets/banana-plantation.jpg';
+import qualityStaff from '../public/assets/quality-staff.jpg';
+import distributionOfficial from '../public/assets/distribution-official.jpg';
+import groundbreakingGroup from '../public/assets/groundbreaking-group.jpg';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Stats() {
+  const { t } = useLanguage();
+
   return (
     <section className="stats" id="plantation">
       <div className="wrap">
         <div className="section-head">
-          <p className="eyebrow">By the Numbers</p>
-          <h2>Plantation area &amp; production capacity</h2>
+          <p className="eyebrow">{t.stats.eyebrow}</p>
+          <h2>{t.stats.h2}</h2>
         </div>
         <div className="stats-grid">
           <div className="stat-card">
             <div className="stat-num">50<sup>ha</sup></div>
-            <h4>Total Banana Plantation Area</h4>
-            <p>
-              Spread across various regions in Lumajang Regency, all plantations are
-              managed systematically and sustainably to produce high-quality bananas
-              with modern cultivation standards.
-            </p>
+            <h4>{t.stats.card1Title}</h4>
+            <p>{t.stats.card1Text}</p>
           </div>
           <div className="stat-card">
             <div className="stat-num">7<sup>t / wk</sup></div>
-            <h4>Total Banana Production</h4>
-            <p>
-              Through an organized cultivation system and our partner farmer network,
-              we maintain product quality, supply continuity, and consistently meet
-              market demand.
-            </p>
+            <h4>{t.stats.card2Title}</h4>
+            <p>{t.stats.card2Text}</p>
           </div>
         </div>
         <div className="strip">
-          <Image src={crateBananas} alt="Crate of freshly harvested premium bananas" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
-          <Image src={packingWoman} alt="Java Fruit staff hygienically packing bananas for distribution" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
-          <Image src={greenBunch} alt="Close-up of a fresh green Mas Kirana banana bunch" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+          <Image src={bananaPlantation} alt={t.stats.alt1} width={1920} height={1080} loading="lazy" sizes="(max-width: 960px) 50vw, 25vw" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+          <Image src={qualityStaff} alt={t.stats.alt2} width={765} height={1020} loading="lazy" sizes="(max-width: 960px) 50vw, 25vw" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+          <Image src={distributionOfficial} alt={t.stats.alt3} width={960} height={1280} loading="lazy" sizes="(max-width: 960px) 50vw, 25vw" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
+          <Image src={groundbreakingGroup} alt={t.stats.alt4} width={1280} height={853} loading="lazy" sizes="(max-width: 960px) 50vw, 25vw" style={{ width: '100%', height: '220px', objectFit: 'cover' }} />
         </div>
       </div>
     </section>
