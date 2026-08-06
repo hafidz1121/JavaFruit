@@ -64,14 +64,17 @@ export default function Contact() {
               </span>
               javafruitindonesia@gmail.com
             </a>
-            <div className="row">
+            <div className="row address-row">
               <span className="ic">
                 <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" />
                   <circle cx="12" cy="10" r="2.5" />
                 </svg>
               </span>
-              {t.contact.address}
+              <span className="address-text">
+                <span>{t.contact.addressLine1}</span>
+                <span>{t.contact.addressLine2}</span>
+              </span>
             </div>
           </div>
           <div className="social-row">

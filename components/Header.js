@@ -63,7 +63,7 @@ export default function Header() {
             <a href="#contact" onClick={() => setMenuOpen(false)}>{t.header.contact}</a>
           </nav>
 
-          <div className="mobile-lang-toggle">
+          <div className="mobile-lang-wrapper">
             <LanguageToggle />
           </div>
 
@@ -82,7 +82,7 @@ export default function Header() {
         </div>
 
         <div className="nav-actions">
-          <div className="desktop-lang-toggle">
+          <div className="desktop-lang-wrapper">
             <LanguageToggle />
           </div>
 

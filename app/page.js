@@ -10,6 +10,7 @@ import WhyChoose from '../components/WhyChoose';
 import Stats from '../components/Stats';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 export default function HomePage() {
   return (
@@ -26,6 +27,7 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </LanguageProvider>
   );
 }

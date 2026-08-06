@@ -11,7 +11,7 @@ export default function Advantages() {
       title: t.advantages.item1Title,
       text: t.advantages.item1Text,
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="8" r="6" />
           <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
         </svg>
@@ -21,7 +21,7 @@ export default function Advantages() {
       title: t.advantages.item2Title,
       text: t.advantages.item2Text,
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           <path d="m9 12 2 2 4-4" />
         </svg>
@@ -31,10 +31,10 @@ export default function Advantages() {
       title: t.advantages.item3Title,
       text: t.advantages.item3Text,
       icon: (
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M12 22v-9" />
-          <path d="M12 13C12 7.5 17 4 21 4c0 5-3 9-9 9Z" />
-          <path d="M12 13C12 8.5 8 6 3 7c0 4.5 3.5 7.5 9 6Z" />
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22V12" />
+          <path d="M12 12C12 7 16 3 21 3c0 5-4 9-9 9Z" />
+          <path d="M12 12C12 7 8 3 3 3c0 5 4 9 9 9Z" />
         </svg>
       ),
     },

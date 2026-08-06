@@ -1,4 +1,4 @@
-import { Fraunces, Inter, IBM_Plex_Mono } from 'next/font/google';
+import { Fraunces, Poppins, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
 const fraunces = Fraunces({
@@ -8,17 +8,17 @@ const fraunces = Fraunces({
   display: 'swap',
 });
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-inter',
+  variable: '--font-poppins',
   display: 'swap',
 });
 
-const plexMono = IBM_Plex_Mono({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  weight: ['500', '600'],
-  variable: '--font-mono',
+  weight: ['500', '600', '700'],
+  variable: '--font-jakarta',
   display: 'swap',
 });
 
@@ -93,7 +93,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${poppins.variable} ${jakarta.variable}`}>
       <body>
         <script
           type="application/ld+json"
